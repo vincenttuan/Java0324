@@ -23,12 +23,12 @@ public class BMIDemo {
         double avg = Stream.of(b1, b2, b3)
                 .mapToDouble(b -> b.getBMI())
                 .average().getAsDouble();
-        System.out.println(avg);
+        System.out.printf("平均: %.2f\n", avg);
         
         double avg2 = Stream.of(b1, b2, b3)
                 .mapToDouble(b -> b.getBMI())
                 .summaryStatistics().getAverage();
-        System.out.println(avg2);
+        System.out.printf("平均: %.2f\n", avg2);
         
     }
 }
