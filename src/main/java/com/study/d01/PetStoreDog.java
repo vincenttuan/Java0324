@@ -17,5 +17,15 @@ public class PetStoreDog {
         dog1.skill();
         System.out.printf("我有一隻 %s 色的 %s 價格是 %,d\n", dog2.color, dog2.name, dog2.price);
         dog2.skill();
+        
+        // 分析
+        Dog[] dogs = {dog1, dog2};
+        int sum = 0;
+        for(int i=0;i<dogs.length;i++) {
+            System.out.printf("%s 價格 %,d\n", dogs[i].name, dogs[i].price);
+            sum += dogs[i].price;
+        }
+        System.out.printf("總價: %,d  均價: %,d\n", sum, sum/dogs.length);
+        
     }
 }
