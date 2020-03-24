@@ -6,7 +6,7 @@ public class SportScore {
     public static void main(String[] args) {
         DoubleStream scores = getScores();
         System.out.println(scores.average().getAsDouble());
-        // 標準差 ? 
+        // 標準差 ?
         double avg = getScores().average().getAsDouble();
         double sum1 = getScores().map(s -> Math.pow(s - avg, 2)).sum();
         double sd = Math.sqrt(sum1 / getScores().count());
