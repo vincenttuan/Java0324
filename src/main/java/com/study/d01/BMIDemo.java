@@ -1,5 +1,7 @@
 package com.study.d01;
 
+import java.util.stream.Stream;
+
 public class BMIDemo {
     public static void main(String[] args) {
         BMI b1 = new BMI();
@@ -11,5 +13,13 @@ public class BMIDemo {
         
         System.out.printf("%s: %.2f %s: %.2f %s: %.2f\n", 
                 b1.name, b1.getBMI(), b2.name, b2.getBMI(), b3.name, b3.getBMI());
+        
+        // 請用 Java 8 列出 BMI 正常的人名+BMI值 18 < bmi <= 23
+        System.out.println("正常的有:");
+        Stream.of(b1, b2, b3)
+                .filter(b -> b.getBMI() > 18 && b.getBMI() <= 23)
+                .forEach(b -> System.out.printf("%s: %.2f\n", b.name, b.getBMI()));
+        // 請求出平均 BMI 值 ?
+        
     }
 }
