@@ -1,5 +1,6 @@
 package com.study.d01;
 
+import java.util.IntSummaryStatistics;
 import java.util.stream.Stream;
 
 public class PetStoreDog {
@@ -36,6 +37,10 @@ public class PetStoreDog {
         Stream.of(dogs)
                 .filter(d -> d.price < 40000)
                 .forEach(d -> System.out.printf("%s 價格 %,d\n", d.name, d.price));
-        
+        // 統計數據
+        IntSummaryStatistics stat = Stream.of(dogs)
+                .mapToInt(d -> d.price)
+                .summaryStatistics();
+        System.out.println(stat);
     }
 }
