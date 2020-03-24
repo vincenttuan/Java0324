@@ -1,6 +1,7 @@
 package com.study.d01;
 
 public class BMI {
+    String name; // 名字
     double h; // 身高
     double w; // 體重
     
