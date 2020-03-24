@@ -20,6 +20,15 @@ public class BMIDemo {
                 .filter(b -> b.getBMI() > 18 && b.getBMI() <= 23)
                 .forEach(b -> System.out.printf("%s: %.2f\n", b.name, b.getBMI()));
         // 請求出平均 BMI 值 ?
+        double avg = Stream.of(b1, b2, b3)
+                .mapToDouble(b -> b.getBMI())
+                .average().getAsDouble();
+        System.out.println(avg);
+        
+        double avg2 = Stream.of(b1, b2, b3)
+                .mapToDouble(b -> b.getBMI())
+                .summaryStatistics().getAverage();
+        System.out.println(avg2);
         
     }
 }
