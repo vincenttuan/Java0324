@@ -1,6 +1,6 @@
 package com.study.d01;
 
-public class PetStore {
+public class PetStoreDog {
     public static void main(String[] args) {
         // 我有 2 隻狗
         Dog dog1 = new Dog();
