@@ -14,6 +14,8 @@ public class PetStore {
         dog2.price = 50000;
         
         System.out.printf("我有一隻 %s 色的 %s 價格是 %,d\n", dog1.color, dog1.name, dog1.price);
+        dog1.skill();
         System.out.printf("我有一隻 %s 色的 %s 價格是 %,d\n", dog2.color, dog2.name, dog2.price);
+        dog2.skill();
     }
 }

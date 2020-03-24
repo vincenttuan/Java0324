@@ -9,6 +9,9 @@ public class Dog {
     // 物件方法
     void skill() {
         System.out.println("我會玩飛盤");
+        if(price >= 40000) {
+            System.out.println("我會看家");
+        }
     }
     
 }
