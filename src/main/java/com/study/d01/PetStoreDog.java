@@ -42,5 +42,6 @@ public class PetStoreDog {
                 .mapToInt(d -> d.price)
                 .summaryStatistics();
         System.out.println(stat);
+        System.out.println(stat.getAverage());
     }
 }
