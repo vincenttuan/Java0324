@@ -10,6 +10,7 @@ public class Wallet {
         money = m; // 修改 money 的資料
     }
     
+    // 設定 money
     void setMoney(int m) { // (封裝 money)
         if(m >= 0) {
             money = m;
@@ -18,6 +19,12 @@ public class Wallet {
         }
     }
     
+    // 取得 money
+    int getMoney() {
+        return money;
+    }
+    
+    // 印出皮夾內的資料
     void printWallet() {
         System.out.printf("我的皮夾裡有 $%d\n", money);
     }
