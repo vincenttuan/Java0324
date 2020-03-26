@@ -36,6 +36,14 @@ public class WalletGame {
                     }
                     break;
                 case 2: // 比七小
+                    System.out.println("使用者猜比七小");
+                    if(ans < 7) {
+                        System.out.printf("電腦數字: %d, 比七小, 恭喜答對了 !\n", ans);
+                        wallet.updateMoney(bet); // 增加金額
+                    } else {
+                        System.out.printf("電腦數字: %d, 比七大, Sorry答錯了 !\n", ans);
+                        wallet.updateMoney(bet * -1); // 減少金額
+                    }
                     break;
                 default:
                     System.out.println("輸入錯誤 !");
