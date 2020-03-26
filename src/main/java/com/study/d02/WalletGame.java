@@ -12,7 +12,8 @@ public class WalletGame {
     
     void play(Wallet wallet) {
         
-        do {            
+        do {
+            System.out.printf("目前你的皮包有 $%d\n", wallet.getMoney());
             Scanner sc = new Scanner(System.in);
             System.out.println("請下注(若輸入0或任意負值則離開程式) ==> ");
             int bet = sc.nextInt(); // 下注金額
@@ -49,7 +50,6 @@ public class WalletGame {
                     System.out.println("輸入錯誤 !");
                     continue;
             }
-            
             
         } while (true);
         
