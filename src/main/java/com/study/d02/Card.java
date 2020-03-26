@@ -9,9 +9,12 @@ public class Card {
     }
 
     public Card(String name, int number, int balance) {
-        this.name = name;
-        this.number = number;
-        this.balance = balance;
+        //this.name = name;
+        //this.number = number;
+        //this.balance = balance;
+        setName(name);
+        setNumber(number);
+        setBalance(balance);
     }
 
     public String getName() {
@@ -35,7 +38,9 @@ public class Card {
     }
 
     public void setBalance(int balance) {
-        this.balance = balance;
+        if(balance >= 0) {
+            this.balance = balance;
+        }
     }
 
     @Override
