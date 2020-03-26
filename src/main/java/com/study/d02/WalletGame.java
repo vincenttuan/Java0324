@@ -11,7 +11,6 @@ public class WalletGame {
     }
     
     void play(Wallet wallet) {
-        
         do {
             System.out.printf("目前你的皮包有 $%d\n", wallet.getMoney());
             Scanner sc = new Scanner(System.in);
