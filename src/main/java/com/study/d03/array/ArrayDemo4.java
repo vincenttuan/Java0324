@@ -20,7 +20,6 @@ public class ArrayDemo4 {
         }
         System.out.println();
     }
-    
     public static boolean exist(int n, int[] lottos) {
         boolean flag = false;
         for(int i=0;i<lottos.length;i++) {
