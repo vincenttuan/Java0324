@@ -11,5 +11,4 @@ public class RefCase3 {
         data = data.concat("8");
         return data;
     }
-    
 }
