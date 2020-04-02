@@ -7,5 +7,8 @@ public class WrapperDemo1 {
         String chinese = "100";
         String english = "90";
         System.out.println(Integer.parseInt(chinese) + Integer.parseInt(english));
+        double x = 100.4;
+        double y = 90.3;
+        System.out.println(Double.min(x, y));
     }
 }
