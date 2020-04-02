@@ -20,8 +20,10 @@ public class ArrayDemo7 {
             System.out.print(x + ", ");
         }
         System.out.println();
-        // 3. Java8 Stream
+        // 3.1 Java8 Stream
         IntStream.of(scores).forEach(x -> System.out.print(x + ", "));
         System.out.println();
+        // 3.2 Java8 Stream(方法參考 ::)
+        IntStream.of(scores).forEach(System.out::println);
     }
 }
