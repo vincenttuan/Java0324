@@ -2,7 +2,11 @@ package com.study.d05;
 
 public class TryDemo2 {
     public static void main(String[] args) {
-        calc(10, 0);
+        try {
+            calc(10, 0);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
     public static void calc(int x, int y) {
         int sum = 0;
