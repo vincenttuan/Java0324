@@ -26,6 +26,7 @@ public class Main {
         Stream.of(youbikes)
                 .filter(y -> Integer.parseInt(y.getSbi()) >= 20)
                 .filter(y -> Integer.parseInt(y.getBemp()) >= 20)
+                .filter(y -> y.getKm() < 0.5)
                 .forEach(System.out::println);
         //24.990166, 121.312027
     }
