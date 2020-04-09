@@ -6,6 +6,7 @@ import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -15,6 +16,6 @@ public class Main {
         System.out.println(je.toString());
         // 將 json 資料轉進 RiceFailure[] 陣列
         RiceFailure[] rfs = new Gson().fromJson(je.toString(), RiceFailure[].class);
-        
+        Stream.of(rfs).forEach(System.out::println);
     }
 }
