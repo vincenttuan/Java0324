@@ -17,7 +17,12 @@ public class Main {
         String json = je.getAsJsonObject().getAsJsonObject("result").getAsJsonArray("records").toString();
         //System.out.println(json);
         Youbike[] youbikes = new Gson().fromJson(json, Youbike[].class);
-
+        Stream.of(youbikes)
+                .forEach(y -> {
+                    double km = getDistance(24.990166, 121.312027, Double.parseDouble(y.getLat()), Double.parseDouble(y.getLng())) / 1000;
+                    y.setKm(km);
+                });
+        
         Stream.of(youbikes)
                 .filter(y -> Integer.parseInt(y.getSbi()) >= 20)
                 .filter(y -> Integer.parseInt(y.getBemp()) >= 20)
