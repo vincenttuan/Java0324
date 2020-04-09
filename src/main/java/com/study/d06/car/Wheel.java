@@ -1,8 +1,9 @@
-package com.study.d06;
+package com.study.d06.car;
 
-// 方向盤
-public class SteeringWheel {
+// 輪胎
+public class Wheel {
     private String name;
+    private double size;
     private int price;
 
     public String getName() {
@@ -11,6 +12,14 @@ public class SteeringWheel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getSize() {
+        return size;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
     }
 
     public int getPrice() {
@@ -23,8 +32,7 @@ public class SteeringWheel {
 
     @Override
     public String toString() {
-        return "SteeringWheel{" + "name=" + name + ", price=" + price + '}';
+        return "Wheel{" + "name=" + name + ", size=" + size + ", price=" + price + '}';
     }
-    
     
 }

@@ -1,4 +1,4 @@
-package com.study.d06;
+package com.study.d06.car;
 
 public class Engine {
     private String name;

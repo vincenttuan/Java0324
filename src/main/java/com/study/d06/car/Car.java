@@ -1,4 +1,4 @@
-package com.study.d06;
+package com.study.d06.car;
 
 import java.util.stream.Stream;
 
