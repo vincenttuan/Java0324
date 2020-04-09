@@ -16,7 +16,17 @@ public class Youbike {
     private String aren;
     private String bemp; // 可還數量(已借出)
     private String act; // 站場場狀態 (1: 表示正使用中)
+    //-----------------------------------------------
+    private double km;
 
+    public double getKm() {
+        return km;
+    }
+
+    public void setKm(double km) {
+        this.km = km;
+    }
+    
     public int getId() {
         return _id;
     }
@@ -139,7 +149,7 @@ public class Youbike {
 
     @Override
     public String toString() {
-        return "Youbike{" + "_id=" + _id + ", sno=" + sno + ", sna=" + sna + ", tot=" + tot + ", sbi=" + sbi + ", sarea=" + sarea + ", mday=" + mday + ", lat=" + lat + ", lng=" + lng + ", ar=" + ar + ", sareaen=" + sareaen + ", snaen=" + snaen + ", aren=" + aren + ", bemp=" + bemp + ", act=" + act + '}';
+        return km + " km, Youbike{" + "_id=" + _id + ", sno=" + sno + ", sna=" + sna + ", tot=" + tot + ", sbi=" + sbi + ", sarea=" + sarea + ", mday=" + mday + ", lat=" + lat + ", lng=" + lng + ", ar=" + ar + ", sareaen=" + sareaen + ", snaen=" + snaen + ", aren=" + aren + ", bemp=" + bemp + ", act=" + act + '}';
     }
     
     
