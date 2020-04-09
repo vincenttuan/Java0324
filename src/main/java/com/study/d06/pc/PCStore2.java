@@ -1,5 +1,7 @@
 package com.study.d06.pc;
 
+import java.util.stream.Stream;
+
 public class PCStore2 {
     public static void main(String[] args) {
         Computer computer1 = new Computer(
@@ -18,7 +20,16 @@ public class PCStore2 {
                 new HardDriver(2000, 15000)
         );
         
-        //System.out.printf("一台配備有:\n%s\n價格 $%,d\n",
-        //        computer, computer.getPrice());
+        Computer[] computers = {computer1, computer2, computer3};
+        Stream.of(computers).forEach(System.out::println);
+        // 請找出最貴的一台是多少錢 ?
+        int max = Stream.of(computers).mapToInt(c -> c.getPrice()).max().getAsInt();
+        // 請找出最便宜的一台是多少錢 ?
+        int min = Stream.of(computers).mapToInt(c -> c.getPrice()).min().getAsInt();
+        // 請算出這三台的均價
+        double avg = Stream.of(computers).mapToInt(c -> c.getPrice()).average().getAsDouble();
+        
+        System.out.printf("max: $%,d min: $%,d avg: %,.2f\n", max, min, avg);
+        
     }
 }
