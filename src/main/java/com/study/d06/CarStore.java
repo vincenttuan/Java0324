@@ -36,9 +36,11 @@ public class CarStore {
         car.setEngine(engine);
         car.setSteeringWheel(steeringWheel);
         car.setWheels(wheels);
+        car.setName("BMW");
         System.out.println(car.getEngine());
         System.out.println(car.getSteeringWheel());
         Stream.of(car.getWheels()).forEach(System.out::println);
         //Stream.of(car.getWheels()).forEach(w -> System.out.println(w));
+        
     }
 }

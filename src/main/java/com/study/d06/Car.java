@@ -1,5 +1,7 @@
 package com.study.d06;
 
+import java.util.stream.Stream;
+
 public class Car {
     private Engine engine;
     private SteeringWheel steeringWheel;
@@ -40,6 +42,8 @@ public class Car {
     }
 
     public int getPrice() {
+        int price = engine.getPrice() + steeringWheel.getPrice() + Stream.of(wheels).mapToInt(w -> w.getPrice()).sum();
+        price *= 2;
         return price;
     }
 
