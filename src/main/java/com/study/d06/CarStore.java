@@ -8,6 +8,7 @@ public class CarStore {
         engine.setPrice(50_0000);
         
         Car car = new Car();
+        car.setEngine(engine);
         System.out.println(car.getEngine());
     }
 }

@@ -28,5 +28,12 @@ public class Engine {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Engine{" + "name=" + name + ", power=" + power + ", price=" + price + '}';
+    }
+
+    
     
 }
