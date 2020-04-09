@@ -1,5 +1,6 @@
 package com.study.d06.food;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
@@ -12,5 +13,8 @@ public class Main {
         Reader reader = new InputStreamReader(new URL(url).openStream(), "UTF-8");
         JsonElement je = JsonParser.parseReader(reader);
         System.out.println(je.toString());
+        // 將 json 資料轉進 RiceFailure[] 陣列
+        RiceFailure[] rfs = new Gson().fromJson(je.toString(), RiceFailure[].class);
+        
     }
 }
