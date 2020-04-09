@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.stream.Stream;
 
 public class Main {
+
     public static void main(String[] args) throws Exception {
         String url = "https://data.tycg.gov.tw/api/v1/rest/datastore/a1b4714b-3b75-4ff8-a8f2-cc377e4eaa0f?format=json&limit=400";
         Reader reader = new InputStreamReader(new URL(url).openStream(), "UTF-8");
@@ -16,11 +17,27 @@ public class Main {
         String json = je.getAsJsonObject().getAsJsonObject("result").getAsJsonArray("records").toString();
         //System.out.println(json);
         Youbike[] youbikes = new Gson().fromJson(json, Youbike[].class);
-        
+
         Stream.of(youbikes)
                 .filter(y -> Integer.parseInt(y.getSbi()) >= 20)
                 .filter(y -> Integer.parseInt(y.getBemp()) >= 20)
                 .forEach(System.out::println);
-        
+        //24.990166, 121.312027
+    }
+
+    private static double rad(double d) {
+        return d * Math.PI / 180.0;
+    }
+
+    public static double getDistance(double lat1, double lng1, double lat2, double lng2) {
+        double radLat1 = rad(lat1);
+        double radLat2 = rad(lat2);
+        double a = radLat1 - radLat2;
+        double b = rad(lng1) - rad(lng2);
+        double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2)
+                + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
+        s = s * 6371.393;
+        s = Math.round(s * 1000);
+        return s;
     }
 }
