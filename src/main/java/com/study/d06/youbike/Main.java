@@ -17,6 +17,8 @@ public class Main {
         String json = je.getAsJsonObject().getAsJsonObject("result").getAsJsonArray("records").toString();
         //System.out.println(json);
         Youbike[] youbikes = new Gson().fromJson(json, Youbike[].class);
+        // 設定 km
+        // 24.990166, 121.312027 -> 現在位置
         Stream.of(youbikes)
                 .forEach(y -> {
                     double km = getDistance(24.990166, 121.312027, Double.parseDouble(y.getLat()), Double.parseDouble(y.getLng())) / 1000;
