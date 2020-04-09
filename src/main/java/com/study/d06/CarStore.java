@@ -5,7 +5,7 @@ public class CarStore {
         Engine engine = new Engine();
         engine.setName("V6");
         engine.setPower(6000);
-        engine.setPower(50_0000);
+        engine.setPrice(50_0000);
         
         Car car = new Car();
         System.out.println(car.getEngine());
