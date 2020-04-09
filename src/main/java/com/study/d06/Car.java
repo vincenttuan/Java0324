@@ -4,7 +4,9 @@ public class Car {
     private Engine engine;
     private SteeringWheel steeringWheel;
     private Wheel[] wheels;
-
+    private String name;
+    private int price;
+    
     public Engine getEngine() {
         return engine;
     }
@@ -27,6 +29,22 @@ public class Car {
 
     public void setWheels(Wheel[] wheels) {
         this.wheels = wheels;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
     
     
