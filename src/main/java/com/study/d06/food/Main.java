@@ -11,6 +11,6 @@ public class Main {
         String url = "https://data.coa.gov.tw/Service/OpenData/FromM/AgricultureiRiceFailure.aspx";
         Reader reader = new InputStreamReader(new URL(url).openStream(), "UTF-8");
         JsonElement je = JsonParser.parseReader(reader);
-        
+        System.out.println(je.toString());
     }
 }
