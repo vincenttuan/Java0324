@@ -20,6 +20,11 @@ public class SteeringWheel {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "SteeringWheel{" + "name=" + name + ", price=" + price + '}';
+    }
     
     
 }
