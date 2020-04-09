@@ -1,5 +1,7 @@
 package com.study.d06;
 
+import java.util.stream.Stream;
+
 public class CarStore {
     public static void main(String[] args) {
         Engine engine = new Engine();
@@ -28,11 +30,15 @@ public class CarStore {
         w4.setSize(17.5);
         w4.setPrice(5000);
         
+        Wheel[] wheels = {w1, w2, w3, w4};
+        
         Car car = new Car();
         car.setEngine(engine);
         car.setSteeringWheel(steeringWheel);
+        car.setWheels(wheels);
         System.out.println(car.getEngine());
         System.out.println(car.getSteeringWheel());
-        
+        Stream.of(car.getWheels()).forEach(System.out::println);
+        //Stream.of(car.getWheels()).forEach(w -> System.out.println(w));
     }
 }

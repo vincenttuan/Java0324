@@ -29,5 +29,10 @@ public class Wheel {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Wheel{" + "name=" + name + ", size=" + size + ", price=" + price + '}';
+    }
     
 }
