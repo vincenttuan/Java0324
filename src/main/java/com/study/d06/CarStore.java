@@ -41,6 +41,6 @@ public class CarStore {
         System.out.println(car.getSteeringWheel());
         Stream.of(car.getWheels()).forEach(System.out::println);
         //Stream.of(car.getWheels()).forEach(w -> System.out.println(w));
-        
+        System.out.printf("%s 的售價是 $%,d\n", car.getName(), car.getPrice());
     }
 }

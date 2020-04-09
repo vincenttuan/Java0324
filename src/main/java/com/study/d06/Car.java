@@ -43,7 +43,7 @@ public class Car {
 
     public int getPrice() {
         int price = engine.getPrice() + steeringWheel.getPrice() + Stream.of(wheels).mapToInt(w -> w.getPrice()).sum();
-        price *= 2;
+        price *= 3;
         return price;
     }
 
