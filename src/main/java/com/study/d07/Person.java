@@ -3,8 +3,14 @@ package com.study.d07;
 import java.util.Calendar;
 
 public class Person {
-    private String name;
+    private static int age;
     
+    // static 初始值得實作區段
+    static {
+        age = 18;
+    }
+    
+    private String name;
     // 共同建構子實作
     {
         Calendar cal = Calendar.getInstance();
