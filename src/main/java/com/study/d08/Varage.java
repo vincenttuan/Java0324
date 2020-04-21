@@ -1,5 +1,7 @@
 package com.study.d08;
 
+import java.util.stream.IntStream;
+
 public class Varage {
     public static void main(String[] args) {
         int[] values = {100, 90, 80};
@@ -11,10 +13,6 @@ public class Varage {
     }
     
     public static int calc(int... values) {
-        int sum = 0;
-        for(int v : values) {
-            sum += v;
-        }
-        return sum;
+        return IntStream.of(values).sum();
     }
 }
