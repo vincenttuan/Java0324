@@ -10,13 +10,24 @@ public class Ball {
     }
 
     @Override
+    public int hashCode() {
+        return 7;
+    }
+    
+    @Override
     public boolean equals(Object obj) {
-        Ball b = (Ball)obj;
-        if(this.price == b.price) {
+        // 判斷是否是同一個物件
+        if(this == obj) {
             return true;
+        }
+        
+        Ball b = null;
+        if(obj instanceof Ball) {
+            b = (Ball)obj;
         } else {
             return false;
         }
+        return (price == b.price && color.equals(b.color)) ;
     }
     
     
