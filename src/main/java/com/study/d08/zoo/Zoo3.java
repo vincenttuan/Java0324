@@ -6,6 +6,8 @@ public class Zoo3 {
     public static void main(String[] args) {
         Animal animal = getRandomAnimal();
         animal.cry();
+        Cat cat = getRandomCat();
+        cat.cry();
     }
     
     // 隨機抽一個動物
@@ -19,5 +21,11 @@ public class Zoo3 {
             default:
                 return new Tiger();
         }
+    }
+
+    // 隨機抽一種貓
+    public static Cat getRandomCat() {
+        int n = new Random().nextInt(2); // 0, 1
+        return n == 0 ? new Cat() : new Tiger();
     }
 }
