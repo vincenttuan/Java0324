@@ -4,7 +4,7 @@ public abstract class ADog implements Dog {
 
     @Override
     public void eat() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("狗罐頭");
     }
 
 }
