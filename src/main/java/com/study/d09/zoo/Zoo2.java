@@ -19,5 +19,8 @@ public class Zoo2 {
                 .sum();
         System.out.println("sum= " + sum);
         
+        Stream.of(new Bird(), new Lion(), new Fish(), new Ostrich())
+                .map(a -> a.getName())
+                .forEach(System.out::println);
     }
 }
