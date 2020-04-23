@@ -1,27 +1,27 @@
 package com.study.d09.zoo;
 
 public class Animal {
- 
-	private String name;
-	 
-	private int legs;
-	 
-	public void move() {
-	}
-	 
-	public String getName() {
-		return null;
-	}
-	 
-	public void setName(String name) {
-	}
-	 
-	public int getLegs() {
-		return 0;
-	}
-	 
-	public void setLegs(int legs) {
-	}
-	 
+    private String name;
+    private int legs;
+
+    public void move() {
+        System.out.println("移動");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getLegs() {
+        return legs;
+    }
+
+    public void setLegs(int legs) {
+        this.legs = legs;
+    }
+
 }
- 
