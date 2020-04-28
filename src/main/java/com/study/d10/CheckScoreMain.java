@@ -8,7 +8,9 @@ public class CheckScoreMain {
         
         int[] scores = {100, 90, 80, 70};
         CheckScore cs = (score) -> score >= 85;
-        printPassScore(scores, cs1);
+        printPassScore(scores, cs);
+        
+        printPassScore(scores, (score) -> score >= 95);
     }
     
     public static void printPassScore(int[] scores, CheckScore cs) {
