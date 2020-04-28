@@ -1,9 +1,12 @@
 package com.study.d10;
 
 // 部門定義
-public class Department { 
+public class Department {
+    static int workTime = 8; // 工作時數
+    int add = 20000; // 部門加給
     // 員工定義
     class Employee {
+        int salary = 40000; // 本薪
         public void job() {
             System.out.println("寫程式");
         }
