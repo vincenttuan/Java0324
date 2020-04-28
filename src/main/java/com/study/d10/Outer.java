@@ -6,8 +6,8 @@ public class Outer {
     class Inner { // 一般內部類別(不可有 static 的成員)
         void print() {
             System.out.println("Hello Inner.");
-            System.out.println(Outer.this.x);
-            System.out.println(Outer.y);
+            System.out.println(Outer.this.x); // 可以使用外部物件成員
+            System.out.println(Outer.y); // 可以使用外部類別成員
             SInner.print(); // 可以調用靜態(static)內部類別的類別成員
         }
     }
@@ -15,7 +15,7 @@ public class Outer {
         static void print() {
             System.out.println("Hello SInner.");
             //System.out.println(Outer.this.x); // 不可使用 this
-            System.out.println(Outer.y);
+            System.out.println(Outer.y); // 可以使用外部類別成員
             //Inner.print(); // 不可直接呼叫一般內部類別的成員
         }
     }
