@@ -11,7 +11,7 @@ public class Department {
             System.out.println("寫程式");
         }
         public void printSalary() { // 印出薪資單
-            int salaryOfMonth = salary + Department.this.add;
+            int salaryOfMonth = this.salary + Department.this.add;
             System.out.printf("每日工作: %d 小時, 月薪: %,d", Department.workTime, salaryOfMonth);
         }
     }
