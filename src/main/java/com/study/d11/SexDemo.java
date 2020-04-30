@@ -5,7 +5,6 @@ public class SexDemo {
         play(Sex.男);
         play(Sex.女);
     }
-    
     public static void play(Sex sex) {
         switch(sex) {
             case 男:
@@ -16,5 +15,4 @@ public class SexDemo {
                 break;
         }
     }
-    
 }
