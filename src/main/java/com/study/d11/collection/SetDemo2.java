@@ -6,7 +6,8 @@ import java.util.Set;
 
 public class SetDemo2 {
     public static void main(String[] args) {
-        Set<Integer> score = new HashSet<>(); // 科目
+        // <> 泛型
+        Set<Integer> score = new HashSet<>(); // 分數
         score.add(90);   // Integer
         score.add(100);   // Integer
         score.add(80);   // Integer
