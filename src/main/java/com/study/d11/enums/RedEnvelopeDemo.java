@@ -1,4 +1,4 @@
-package com.study.d11;
+package com.study.d11.enums;
 
 import java.util.stream.Stream;
 

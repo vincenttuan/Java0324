@@ -1,4 +1,4 @@
-package com.study.d11;
+package com.study.d11.enums;
 
 public enum USCurrency {
     PENNY(1),    // 一美分

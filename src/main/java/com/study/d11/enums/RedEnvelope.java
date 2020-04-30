@@ -1,4 +1,4 @@
-package com.study.d11;
+package com.study.d11.enums;
 
 public enum RedEnvelope {
     雙親(20000),

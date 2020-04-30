@@ -1,4 +1,4 @@
-package com.study.d11;
+package com.study.d11.enums;
 
 public class USCurrencyDemo {
     public static void main(String[] args) {

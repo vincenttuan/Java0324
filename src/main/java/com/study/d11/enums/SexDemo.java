@@ -1,4 +1,4 @@
-package com.study.d11;
+package com.study.d11.enums;
 
 public class SexDemo {
     public static void main(String[] args) {
