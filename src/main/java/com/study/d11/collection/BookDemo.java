@@ -16,5 +16,11 @@ public class BookDemo {
         books.add(b4);
         System.out.println(books);
         System.out.println(books.size());
+        // 總價 = ?
+        int sum = books.stream().mapToInt(b -> b.getPrice()).sum();
+        System.out.println(sum);
+        int sum2 = books.stream().mapToInt(Book::getPrice).sum();
+        System.out.println(sum2);
+        
     }
 }
