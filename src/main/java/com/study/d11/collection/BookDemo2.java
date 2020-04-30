@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class BookDemo2 {
     public static void main(String[] args) {
+        Book.sort = 1;
         Book b1 = new Book("Java8", "Vincent", 500);
         Book b2 = new Book("Python先修", "Bob", 400);
         Book b3 = new Book("C++", "Mary", 300);

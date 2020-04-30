@@ -3,6 +3,7 @@ package com.study.d11.collection;
 import java.util.Objects;
 
 public class Book implements Comparable<Book>{
+    public static int sort = 1;
     private String name;
     private String author;
     private int price;
@@ -79,7 +80,7 @@ public class Book implements Comparable<Book>{
 
     @Override
     public int compareTo(Book o) {
-        return price - o.price;
+        return (price - o.price) * sort;
     }
     
     
