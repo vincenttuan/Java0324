@@ -7,7 +7,7 @@ public enum USCurrency {
     QUARTER(25); // 25美分
     
     private int value;
- 
+    // enum 建構子一律是 private
     private USCurrency(int value) {
         this.value = value;
     }
