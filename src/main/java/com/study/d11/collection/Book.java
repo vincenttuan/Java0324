@@ -2,7 +2,7 @@ package com.study.d11.collection;
 
 import java.util.Objects;
 
-public class Book {
+public class Book implements Comparable<Book>{
     private String name;
     private String author;
     private int price;
@@ -75,6 +75,11 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" + "name=" + name + ", author=" + author + ", price=" + price + '}';
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return price - o.price;
     }
     
     
