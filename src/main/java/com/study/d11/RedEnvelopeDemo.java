@@ -20,6 +20,8 @@ public class RedEnvelopeDemo {
         // Java 8
         int sum2 = Stream.of(res).mapToInt(r -> r.getMoney()).sum();
         System.out.println(sum2);
+        int sum3 = Stream.of(res).mapToInt(RedEnvelope::getMoney).sum();
+        System.out.println(sum3);
         
     }
 }
