@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class CollectionDemo {
+public class SetDemo {
     public static void main(String[] args) {
         Set subject = new HashSet(); // 科目
         subject.add("國文"); // String
