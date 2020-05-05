@@ -12,10 +12,10 @@ public class StackDemo {
         char[] chars = str.toCharArray(); // Java -> {'J', 'a', 'v', 'a'}
         Stack<Character> stack = new Stack<>();
         for(char c : chars) {
-            stack.push(c);
+            stack.push(c); // 放入資料
         }
         while (!stack.isEmpty()) {            
-            char data = stack.pop();
+            char data = stack.pop(); // 取得資料並移除
             System.out.print(data);
         }
         
