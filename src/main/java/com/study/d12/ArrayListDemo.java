@@ -16,5 +16,13 @@ public class ArrayListDemo {
         IntSummaryStatistics stats = list.stream().mapToInt(i -> i).summaryStatistics();
         System.out.println(stats);
         System.out.println(stats.getAverage());
+        // 質數總和 = ?
+        sum = list.stream().mapToInt(i -> i)
+                    .filter(i -> isPrime(i))
+                    .sum();
+        System.out.println("質數總和 = " + sum);
+    }
+    public static boolean isPrime(int number) {
+        return number > 1 && !IntStream.rangeClosed(2, number/2).anyMatch(i -> number % i == 0);
     }
 }
