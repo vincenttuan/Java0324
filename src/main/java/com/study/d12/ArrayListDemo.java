@@ -18,11 +18,11 @@ public class ArrayListDemo {
         System.out.println(stats.getAverage());
         // 質數總和 = ?
         sum = list.stream().mapToInt(i -> i)
-                    .filter(i -> isPrime(i))
+                    .filter(n -> isPrime(n))
                     .sum();
         System.out.println("質數總和 = " + sum);
     }
-    public static boolean isPrime(int number) {
-        return number > 1 && !IntStream.rangeClosed(2, number/2).anyMatch(i -> number % i == 0);
+    public static boolean isPrime(int n) {
+        return n > 1 && !IntStream.rangeClosed(2, n/2).anyMatch(i -> n % i == 0);
     }
 }
