@@ -2,6 +2,7 @@ package com.study.d12;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class ListDemo {
     public static void main(String[] args) {
@@ -19,6 +20,17 @@ public class ListDemo {
         }
         for(int i=list.size()-1;i>=0;i--) {
             System.out.println(list.get(i));
+        }
+        ListIterator<Integer> iter = list.listIterator();
+        while (iter.hasNext()) {
+            int idx = iter.nextIndex();
+            Integer next = iter.next();
+            System.out.printf("%d : %d\n", idx, next);
+        }
+        while (iter.hasPrevious()) {
+            int idx = iter.previousIndex();
+            Integer previous = iter.previous();
+            System.out.printf("%d : %d\n", idx, previous);
         }
     }
 }
