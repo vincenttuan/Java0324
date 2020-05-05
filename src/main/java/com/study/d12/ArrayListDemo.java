@@ -21,6 +21,12 @@ public class ArrayListDemo {
                     .filter(n -> isPrime(n))
                     .sum();
         System.out.println("質數總和 = " + sum);
+        
+        sum = list.stream().mapToInt(i -> i)
+                    .filter(n -> n > 1 && !IntStream.rangeClosed(2, n/2).anyMatch(i -> n % i == 0))
+                    .sum();
+        System.out.println("質數總和 = " + sum);
+        
     }
     public static boolean isPrime(int n) {
         return n > 1 && !IntStream.rangeClosed(2, n/2).anyMatch(i -> n % i == 0);
