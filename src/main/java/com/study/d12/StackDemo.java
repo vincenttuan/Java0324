@@ -18,6 +18,5 @@ public class StackDemo {
             char data = stack.pop(); // 取得資料並移除
             System.out.print(data);
         }
-        
     }
 }
