@@ -12,7 +12,7 @@ public class QueueDemo {
         q.offer("拉出來");
         System.out.println(q);
         
-        while (q.size() > 0) {            
+        while (!q.isEmpty()) {            
             String data = q.poll();
             System.out.println("現在進行: " + data);
         }
