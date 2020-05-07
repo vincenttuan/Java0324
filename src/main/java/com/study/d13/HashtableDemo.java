@@ -12,7 +12,12 @@ import java.util.TreeSet;
 public class HashtableDemo {
     public static void main(String[] args) {
         Map<String, Collection<Integer>> lotto = new Hashtable<>();
-        
+        lotto.put("大樂透", getBigLotto(49, 6));
+        lotto.put("539", getBigLotto(39, 5));
+        lotto.put("四星彩", getStarsLotto(4));
+        lotto.put("三星彩", getStarsLotto(3));
+        System.out.println(lotto.get("大樂透"));
+        System.out.println(lotto);
     }
     
     public static Set<Integer> getBigLotto(int max, int count) { // 大樂透, 539
