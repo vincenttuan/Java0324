@@ -24,5 +24,13 @@ public class CarDemo {
         }
         System.out.printf("sum= %,d\n", sum);
         
+        // Java 8
+        sum = map.entrySet()
+                .stream()
+                .mapToInt(m -> m.getKey().getPrice() * m.getValue())
+                .sum();
+        System.out.printf("sum= %,d\n", sum);
+                
+        
     }
 }
