@@ -1,7 +1,9 @@
 package com.study.d13;
 
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TreeMap;
+import java.util.function.Predicate;
 
 public class CarDemo {
     static Map<Car, Integer> map;
@@ -25,8 +27,10 @@ public class CarDemo {
         System.out.printf("sum= %,d\n", sum);
         
         // Java 8
+        Predicate<Entry<Car, Integer>> filter_1 = e -> e.getKey().getPrice() > 100_0000;
         sum = map.entrySet()
                 .stream()
+                .filter(filter_1)
                 .mapToInt(m -> m.getKey().getPrice() * m.getValue())
                 .sum();
         System.out.printf("sum= %,d\n", sum);
