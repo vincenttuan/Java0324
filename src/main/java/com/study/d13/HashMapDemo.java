@@ -10,5 +10,10 @@ public class HashMapDemo {
         map.put("Mary", 50000);
         map.put("Tom", 60000);
         System.out.println(map);
+        System.out.println(map.size());
+        System.out.println(map.get("John"));
+        System.out.println(map.keySet());
+        System.out.println(map.values());
+        
     }
 }
