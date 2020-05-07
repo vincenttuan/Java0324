@@ -1,6 +1,6 @@
 package com.study.d13;
 
-public class Car {
+public class Car implements Comparable<Car>{
     private String name;
     private Integer cc;
     private Integer price;
@@ -38,6 +38,11 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" + "name=" + name + ", cc=" + cc + ", price=" + price + '}';
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        return price - o.price;
     }
     
 }

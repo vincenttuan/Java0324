@@ -16,6 +16,6 @@ public class CarDemo {
     }
     
     public static void main(String[] args) {
-        
+        System.out.println(map);
     }
 }
