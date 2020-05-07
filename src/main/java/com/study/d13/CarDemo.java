@@ -17,5 +17,12 @@ public class CarDemo {
     
     public static void main(String[] args) {
         System.out.println(map);
+        // 請計算總資產價值 ?
+        int sum = 0;
+        for(Car car : map.keySet()) {
+            sum += car.getPrice() * map.get(car); // 價格 * 數量
+        }
+        System.out.printf("sum= %,d\n", sum);
+        
     }
 }
