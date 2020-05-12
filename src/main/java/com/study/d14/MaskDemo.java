@@ -19,7 +19,7 @@ public class MaskDemo {
         // Java 8
         array.forEach(jo -> {
             jo = jo.getAsJsonObject().get("properties").getAsJsonObject();
-            if(jo.getAsJsonObject().get("mask_adult").getAsInt() > 4000) {
+            if(jo.getAsJsonObject().get("mask_adult").getAsInt() > 19000) {
                 System.out.println(jo);
             }
         });
