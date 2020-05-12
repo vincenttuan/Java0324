@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import static java.util.stream.Collectors.toList;
+import java.util.stream.Stream;
 
 public class MyStockDemo {
     public static void main(String[] args) throws Exception {
@@ -26,11 +28,14 @@ public class MyStockDemo {
         }
         //System.out.println(myStocks);
         // 4. 進行資料分析
-        myStocks.stream()
+        Stream<MyStock> stream = myStocks.stream()
                 .filter(ms -> !ms.殖利率.equals("-") && Double.parseDouble(ms.殖利率) > 7)
                 .filter(ms -> !ms.本益比.equals("-") && Double.parseDouble(ms.本益比) < 10)
-                .filter(ms -> !ms.股價淨值比.equals("-") && Double.parseDouble(ms.股價淨值比) < 1)
-                .forEach(System.out::println);
-        
+                .filter(ms -> !ms.股價淨值比.equals("-") && Double.parseDouble(ms.股價淨值比) < 1);
+        // 4.1. 將結果印出
+        //stream.forEach(System.out::println);
+        // 4.2. 將所查到的結果儲存在新的集合中
+        List<MyStock> results = stream.collect(toList());
+        System.out.println(results);
     }
 }
