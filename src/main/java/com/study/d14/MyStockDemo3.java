@@ -1,0 +1,56 @@
+package com.study.d14;
+
+import java.io.File;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import static java.util.stream.Collectors.toList;
+import java.util.stream.Stream;
+
+public class MyStockDemo3 {
+    public static void main(String[] args) {
+        for(int m=1;m<=5;m++) {
+            for(int d=1;d<=31;d++) {
+                try {
+                    action(2020, m, d);
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+                }
+            }
+        }
+    }
+    
+    public static void action(int yyyy, int mm, int dd) throws Exception {
+        // 1.遠端的 URL path + CSV 資料剖析(整理並釐清資料)
+        String path = "https://www.twse.com.tw/exchangeReport/BWIBBU_d?response=csv&date=%d%02d%02d&selectType=ALL";
+        path = String.format(path, yyyy, mm, dd);
+        URL url = new URL(path);
+        Scanner sc = new Scanner(url.openStream()).useDelimiter("\\A");
+        String data = sc.next();
+        //System.out.println(data);
+        String[] rows = data.split("\n");
+        List<MyStock> myStocks = new ArrayList<>();
+        for(String row : rows) {
+            String[] stock = row.trim().replace("\"", "").split(",");
+            if(stock.length == 7 && !stock[0].contains("證券代號")) {
+                //System.out.println(stock[0] + " " + stock[1] + " " + stock[2] + " " + stock[3] + " " + stock[4] + " " + stock[5] + " " + stock[6]);
+                // 2. 匯入到 MyStock 物件中
+                MyStock myStock = new MyStock(stock[0], stock[1], stock[2], stock[3], stock[4], stock[5], stock[6]);
+                // 3. 加入倒 myStocks 集合中
+                myStocks.add(myStock);
+            }
+        }
+        //System.out.println(myStocks);
+        // 4. 進行資料分析
+        Stream<MyStock> stream = myStocks.stream()
+                .filter(ms -> !ms.殖利率.equals("-") && Double.parseDouble(ms.殖利率) > 7)
+                .filter(ms -> !ms.本益比.equals("-") && Double.parseDouble(ms.本益比) < 10)
+                .filter(ms -> !ms.股價淨值比.equals("-") && Double.parseDouble(ms.股價淨值比) < 1);
+        // 4.1. 將結果印出
+        //stream.forEach(System.out::println);
+        // 4.2. 將所查到的結果儲存在新的集合中
+        List<MyStock> results = stream.collect(toList());
+        System.out.println(yyyy + "/" + mm + "/" + dd + " " + results);
+    }
+}
