@@ -1,6 +1,7 @@
 package com.study.d15;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class PersonDemo {
@@ -10,5 +11,9 @@ public class PersonDemo {
         Person p3 = new Person("Helen", 40);
         
         Stream.of(p1, p2, p3).sorted().forEach(System.out::println);
+        
+        Stream.of(p1, p2, p3)
+                .sorted(Comparator.comparing(Person::getAge).reversed())
+                .forEach(System.out::println);
     }
 }
