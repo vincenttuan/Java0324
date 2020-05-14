@@ -2,6 +2,8 @@ package com.study.d15;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
+import static java.util.stream.Collectors.toList;
 import java.util.stream.Stream;
 
 public class PersonDemo {
@@ -25,6 +27,10 @@ public class PersonDemo {
                     }
                 })
                 .forEach(System.out::println);
-
+        
+        List<Person> list = Stream.of(p1, p2, p3)
+                .sorted(Comparator.comparing(Person::getAge))
+                .collect(toList());
+        System.out.println("list: " + list);
     }
 }
