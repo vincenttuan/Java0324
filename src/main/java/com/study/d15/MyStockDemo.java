@@ -22,5 +22,9 @@ public class MyStockDemo {
                 .sorted((MyStock o1, MyStock o2)->(int)((o1.getShares() * o1.getCost()) - (o2.getShares() * o2.getCost())))
                 .forEach(System.out::println);
         
+        Stream.of(m1, m2, m3)
+                .sorted(Comparator.comparing(MyStock::getTotalCost))
+                .forEach(System.out::println);
+        
     }
 }
