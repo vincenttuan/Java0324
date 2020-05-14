@@ -1,6 +1,6 @@
 package com.study.d15;
 
-public class MyStock {
+public class MyStock implements Comparable<MyStock>{
     private String symbol; // 股票代號
     private int shares; // 買進數量
     private double cost; // 買進成本
@@ -38,6 +38,11 @@ public class MyStock {
     @Override
     public String toString() {
         return "MyStock{" + "symbol=" + symbol + ", shares=" + shares + ", cost=" + cost + '}';
+    }
+
+    @Override
+    public int compareTo(MyStock o) {
+        return symbol.compareTo(o.symbol);
     }
     
     
