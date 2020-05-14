@@ -42,7 +42,9 @@ public class BMI implements Comparable<BMI>{
 
     @Override
     public int compareTo(BMI o) {
-        return name.compareTo(o.name);
+        double bmi_1 = weight/Math.pow(height/100, 2);
+        double bmi_2 = o.weight/Math.pow(o.height/100, 2);
+        return (int)(bmi_1 - bmi_2);
     }
     
 }
