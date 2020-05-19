@@ -9,8 +9,10 @@ public class TryCatchDemo2 {
             // 可能的錯誤是: ArithmeticException, NullPointerException
             try {
                 System.out.printf("%d / %d = %d\n", x, y, x/y);
-            } catch (ArithmeticException | NullPointerException e) {
+            } catch (ArithmeticException | NullPointerException e) { // 使用 | 不可以有繼承關係
                 // 不處理
+            } catch (Exception e) {
+                // 其他錯誤
             }
             
         }
