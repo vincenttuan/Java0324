@@ -13,6 +13,7 @@ public class TryCatchDemo3 {
         } catch (ArithmeticException | NullPointerException e) { // 使用 | 不可以有繼承關係
             // 結束程式
             return;
+            //System.exit(0); // finally 區段不會執行
         } finally {
             System.out.println("做完了");
         }
