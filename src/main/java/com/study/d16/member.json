@@ -2,12 +2,14 @@
     {
         "username": "john",
         "password": "1234",
-        "salary": 50000
+        "salary": 50000,
+        "active": true
     },
     {
         "username": "mary",
         "password": "5678",
-        "salary": 80000
+        "salary": 80000,
+        "active": false
     }
 ]
 
