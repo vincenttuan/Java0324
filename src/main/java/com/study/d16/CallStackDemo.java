@@ -10,7 +10,9 @@ public class CallStackDemo {
         try {
             bar(y);
         } catch (Exception e) {
-            System.out.println("foo() 處理了, " + e.getMessage());
+            System.out.println("錯誤訊息: " + e.getMessage());
+            System.out.println("錯誤字串: " + e);
+            e.printStackTrace(System.out); // 在 System.out 上印出完整錯誤(錯誤在堆疊中的內容)
         }
     }
     
