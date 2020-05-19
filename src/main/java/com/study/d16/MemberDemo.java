@@ -20,7 +20,29 @@ public class MemberDemo {
             System.out.println("登入錯誤訊息: " + e.getMessage());
         }
     }
+    
     public static boolean login(String username, String password) throws FileNotFoundException, Exception {
+        isMember(username);
+        checkUsernameAndPassowrd(username, password);
+        return true;
+    }
+    
+    public static boolean isMember(String username) throws FileNotFoundException, Exception {
+        File file = new File("src\\main\\java\\com\\study\\d16\\member.json");
+        Scanner sc = new Scanner(file).useDelimiter("\\A");
+        String json = sc.next();
+        JsonArray ja = JsonParser.parseString(json).getAsJsonArray();
+        for(int i=0;i<ja.size();i++) {
+            JsonObject jo = ja.get(i).getAsJsonObject();
+            if(jo.get("username").getAsString().equals(username)) {
+                return true;
+            }
+        }
+        Exception e = new Exception("無此會員, 請先加入 !");
+        throw e;
+    }
+    
+    public static boolean checkUsernameAndPassowrd(String username, String password) throws FileNotFoundException, Exception {
         File file = new File("src\\main\\java\\com\\study\\d16\\member.json");
         Scanner sc = new Scanner(file).useDelimiter("\\A");
         String json = sc.next();
@@ -34,5 +56,6 @@ public class MemberDemo {
         }
         Exception e = new Exception("登入錯誤, 請重新登入 !");
         throw e;
+        
     }
 }
