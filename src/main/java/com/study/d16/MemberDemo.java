@@ -12,7 +12,7 @@ import java.util.logging.Level;
 public class MemberDemo {
     public static void main(String[] args) {
         try {
-            boolean loginCheck = login("john2", "12345");
+            boolean loginCheck = login("john", "1234");
             System.out.println("loginCheck: " + loginCheck);
         } catch (FileNotFoundException ex) {
             System.out.println("檔案找不到");
@@ -23,6 +23,7 @@ public class MemberDemo {
     
     public static boolean login(String username, String password) throws FileNotFoundException, Exception {
         isMember(username);
+        isActive(username);
         checkUsernameAndPassowrd(username, password);
         return true;
     }
@@ -40,6 +41,21 @@ public class MemberDemo {
         }
         Exception e = new Exception("無此會員, 請先加入 !");
         throw e;
+    }
+    
+    public static boolean isActive(String username) throws FileNotFoundException, Exception {
+        File file = new File("src\\main\\java\\com\\study\\d16\\member.json");
+        Scanner sc = new Scanner(file).useDelimiter("\\A");
+        String json = sc.next();
+        JsonArray ja = JsonParser.parseString(json).getAsJsonArray();
+        for(int i=0;i<ja.size();i++) {
+            JsonObject jo = ja.get(i).getAsJsonObject();
+            if(jo.get("username").getAsString().equals(username) && !jo.get("active").getAsBoolean()) {
+                Exception e = new Exception(username + "是黑名單");
+                throw e;
+            }
+        }
+        return true;
     }
     
     public static boolean checkUsernameAndPassowrd(String username, String password) throws FileNotFoundException, Exception {
