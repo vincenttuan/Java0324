@@ -12,7 +12,7 @@ import java.util.logging.Level;
 public class MemberDemo {
     public static void main(String[] args) {
         try {
-            boolean loginCheck = login("john", "12345");
+            boolean loginCheck = login("john2", "12345");
             System.out.println("loginCheck: " + loginCheck);
         } catch (FileNotFoundException ex) {
             System.out.println("檔案找不到");
