@@ -9,8 +9,13 @@ public class NewsPage {
         NewsService service = new NewsService();
         Data data = service.getNews("5/20");
         System.out.println(data.getTitle());
+        /*
         for(List<String> list : data.getHeadlines()) {
             list.stream().forEach(System.out::println);
         }
+        */
+        data.getHeadlines()
+                .stream()
+                .forEach(list -> list.stream().forEach(System.out::println));
     }
 }
