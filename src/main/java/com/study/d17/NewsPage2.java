@@ -4,7 +4,7 @@ import com.study.d17.entity.Data;
 import com.study.d17.exception.NewsNotFoundException;
 import com.study.d17.service.NewsService;
 
-public class NewsPage {
+public class NewsPage2 {
     public static void main(String[] args) {
         NewsService service = new NewsService();
         try {
