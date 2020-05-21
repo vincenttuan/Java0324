@@ -1,6 +1,7 @@
 package com.study.d17.dao;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.study.d17.entity.Member;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,7 +15,8 @@ public class LoginDAO {
         try {
             File file = new File("src\\main\\java\\com\\study\\d17\\db\\member.json");
             String json = new Scanner(file).useDelimiter("\\A").next();
-            members = new Gson().fromJson(json, Member[].class);
+            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+            members = gson.fromJson(json, Member[].class);
         } catch (FileNotFoundException ex) {
             System.out.println(ex);
         }
