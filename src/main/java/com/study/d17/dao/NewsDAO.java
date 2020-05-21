@@ -3,10 +3,12 @@ package com.study.d17.dao;
 import com.google.gson.Gson;
 import com.study.d17.entity.Data;
 import com.study.d17.entity.News;
+import com.study.d17.exception.NewsNotFoundException;
 import java.io.File;
 import java.net.URL;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 import org.apache.commons.lang.StringEscapeUtils;
 
@@ -28,11 +30,16 @@ public class NewsDAO {
         return news;
     }
     
-    public Data getDataByDate(String date) {
-        return news.getData().stream()
+    public Data getDataByDate(String date) throws NewsNotFoundException {
+        Optional<Data> data = news.getData().stream()
                 .filter(d -> d.getTitle().contains(date))
-                .findFirst()
-                .get();
+                .findFirst();
+        if(data.isPresent()) {
+            return data.get();
+        } else {
+            NewsNotFoundException e = new NewsNotFoundException("無此新聞資料");
+            throw e;
+        }
     }
     
 }

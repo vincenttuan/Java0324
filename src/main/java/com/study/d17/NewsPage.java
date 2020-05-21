@@ -7,7 +7,7 @@ import java.util.List;
 public class NewsPage {
     public static void main(String[] args) {
         NewsService service = new NewsService();
-        Data data = service.getNews("5/20");
+        Data data = service.getNews("5/22");
         System.out.println(data.getTitle());
         /*
         for(List<String> list : data.getHeadlines()) {
