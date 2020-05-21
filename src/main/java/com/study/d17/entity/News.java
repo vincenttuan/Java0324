@@ -1,4 +1,3 @@
-/* Copyright 2020 freecodeformat.com */
 package com.study.d17.entity;
 import java.util.List;
 

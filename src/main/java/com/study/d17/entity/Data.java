@@ -1,8 +1,6 @@
-/* Copyright 2020 freecodeformat.com */
 package com.study.d17.entity;
 import java.util.List;
 
-/* Time: 2020-05-21 20:45:16 @author freecodeformat.com @website http://www.freecodeformat.com/json2javabean.php */
 public class Data {
 
     private String link;
