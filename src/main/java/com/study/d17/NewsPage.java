@@ -11,7 +11,7 @@ public class NewsPage {
     public static void main(String[] args) {
         NewsService service = new NewsService();
         try {
-            Data data = service.getNews("5/22");
+            Data data = service.getNews("5/21");
             System.out.println(data.getTitle());
             data.getHeadlines()
                     .stream()
