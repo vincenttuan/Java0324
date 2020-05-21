@@ -1,14 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.study.d17;
 
-/**
- *
- * @author MB-teacher
- */
+import com.study.d17.exception.LoginException;
+import com.study.d17.service.LoginService;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class LoginPage {
-    
+    public static void main(String[] args) {
+        LoginService service = new LoginService();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("請輸入 username : ");
+        String username = sc.next();
+        System.out.print("請輸入 password : ");
+        String password = sc.next();
+        try {
+            boolean check = service.login(username, password);
+            if(check) {
+                System.out.println("登入成功");
+            }
+        } catch (LoginException ex) {
+            System.out.println(ex);
+        }
+        
+    }
 }
