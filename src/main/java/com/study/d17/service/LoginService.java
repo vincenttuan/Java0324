@@ -6,6 +6,7 @@ import com.study.d17.exception.LoginException;
 
 public class LoginService {
     private LoginDAO dao = new LoginDAO();
+    
     public boolean login(String username, String password) throws LoginException {
         Member[] members = dao.getMembers();
         for(Member m : members) {
@@ -16,4 +17,13 @@ public class LoginService {
         LoginException ex = new LoginException("登入失敗");
         throw ex;
     }
+
+    public Member loginAndMember(String username, String password) throws LoginException {
+        if(login(username, password)) {
+            Member member = dao.getMemberByUsername(username);
+            return member;
+        }
+        return null;
+    }
+    
 }

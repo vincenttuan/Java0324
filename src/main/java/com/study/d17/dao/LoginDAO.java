@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.study.d17.entity.Member;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,7 +22,15 @@ public class LoginDAO {
             System.out.println(ex);
         }
     }
+    
     public Member[] getMembers() {
         return members;
+    }
+    
+    public Member getMemberByUsername(String username) {
+        return Arrays.stream(members)
+                .filter(m -> m.getUsername().equals(username))
+                .findFirst()
+                .get();
     }
 }
