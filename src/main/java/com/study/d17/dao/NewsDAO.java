@@ -1,14 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.study.d17.dao;
 
-/**
- *
- * @author MB-teacher
- */
+import java.net.URL;
+import java.util.Scanner;
+import org.apache.commons.lang.StringEscapeUtils;
+
 public class NewsDAO {
-    
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("http://oldpaper.g0v.ronny.tw/index/json");
+        String json = new Scanner(url.openStream()).useDelimiter("\\A").next();
+        json = StringEscapeUtils.unescapeJava(json);
+        System.out.println(json);
+        
+    }
 }
