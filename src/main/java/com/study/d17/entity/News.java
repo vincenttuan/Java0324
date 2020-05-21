@@ -1,14 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Copyright 2020 freecodeformat.com */
 package com.study.d17.entity;
+import java.util.List;
 
-/**
- *
- * @author MB-teacher
- */
 public class News {
+
+    private List<Data> data;
     
+    private String nextLink;
+    
+    public void setData(List<Data> data) {
+         this.data = data;
+     }
+     public List<Data> getData() {
+         return data;
+     }
+
+    public void setNextLink(String nextLink) {
+         this.nextLink = nextLink;
+     }
+     public String getNextLink() {
+         return nextLink;
+     }
+
 }
