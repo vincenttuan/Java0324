@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.study.d17;
 
-/**
- *
- * @author MB-teacher
- */
+import com.study.d17.entity.Data;
+import com.study.d17.service.NewsService;
+import java.util.List;
+
 public class NewsPage {
-    
+    public static void main(String[] args) {
+        NewsService service = new NewsService();
+        Data data = service.getNews("5/20");
+        System.out.println(data.getTitle());
+        for(List<String> list : data.getHeadlines()) {
+            list.stream().forEach(System.out::println);
+        }
+    }
 }
