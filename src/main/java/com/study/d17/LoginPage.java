@@ -1,6 +1,6 @@
 package com.study.d17;
 
-import com.study.d17.exception.LoginException;
+import com.study.d17.exception.LoginFailException;
 import com.study.d17.service.LoginService;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -19,7 +19,7 @@ public class LoginPage {
             if(check) {
                 System.out.println("登入成功");
             }
-        } catch (LoginException ex) {
+        } catch (LoginFailException ex) {
             System.out.println(ex);
         }
         

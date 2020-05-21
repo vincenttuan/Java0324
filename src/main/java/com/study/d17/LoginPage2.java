@@ -1,7 +1,7 @@
 package com.study.d17;
 
 import com.study.d17.entity.Member;
-import com.study.d17.exception.LoginException;
+import com.study.d17.exception.LoginFailException;
 import com.study.d17.service.LoginService;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -18,7 +18,7 @@ public class LoginPage2 {
         try {
             Member member = service.loginAndMember(username, password);
             System.out.println(member);
-        } catch (LoginException ex) {
+        } catch (LoginFailException ex) {
             System.out.println(ex);
         }
         
