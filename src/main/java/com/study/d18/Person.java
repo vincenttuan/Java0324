@@ -8,9 +8,10 @@ public class Person {
     }
 
     public void setAge(int age) {
-        // ...
-        //age++;
-        assert age >= 18 && age <= 150 : age + "歲不合法";
-        this.age = age;
+        if (age >= 18 && age < 120) {
+            this.age = age;
+        } else {
+            this.age = -1;
+        }
     }
 }
