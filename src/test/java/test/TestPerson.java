@@ -1,7 +1,12 @@
-package com.study.d18;
+package test;
+
+import com.study.d18.Person;
+import org.junit.Test;
 
 public class TestPerson {
-    public static void main(String[] args) {
+    
+    @Test
+    public void test() {
         //Arrange
         Person p = new Person();
         int age = 18;

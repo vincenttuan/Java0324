@@ -1,10 +1,15 @@
-package com.study.d18;
+package test;
+
+import com.study.d18.CheckSex;
+import org.junit.Test;
 
 public class TestCheckSex {
-    public static void main(String[] args) {
+    
+    @Test
+    public void test() {
         // Arrange
         CheckSex cs = new CheckSex();
-        String id = "A3223344556";
+        String id = "A1223344556";
         String excepted = "男生";
         // Act
         String act = cs.getSexByID(id);

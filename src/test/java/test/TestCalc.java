@@ -4,6 +4,7 @@ import com.study.d18.Calc;
 import org.junit.Test;
 
 public class TestCalc {
+    
     @Test
     public void test() {
         // 3A Arrange Act Assert
