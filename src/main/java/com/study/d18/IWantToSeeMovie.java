@@ -11,10 +11,15 @@ public class IWantToSeeMovie {
         map.put("A班", "A.txt");
         map.put("B班", "B.txt");
         // 哪一班可以看限制級電影 ?
-        
+        map.entrySet().forEach(entry -> {
+            try {
+                System.out.println(entry.getKey() + ":" + pass(entry.getValue()));
+            } catch (Exception e) {
+            }
+        });
     }
     
-    public static boolean pass(String key, String value) throws Exception {
+    public static boolean pass(String value) throws Exception {
         String baseUrl = "src\\main\\java\\com\\study\\d18\\";
         File file = new File(baseUrl + value);
         String data = new Scanner(file).useDelimiter("\\A").next();
