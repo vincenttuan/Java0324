@@ -5,4 +5,8 @@ public class Calc {
         int sum = x + y;
         return sum;
     }
+    public int sub(int x, int y) {
+        int sum = x - y;
+        return sum;
+    }
 }
