@@ -4,7 +4,7 @@ public class TestCheckSex {
     public static void main(String[] args) {
         // Arrange
         CheckSex cs = new CheckSex();
-        String id = "A1223344556";
+        String id = "A3223344556";
         String excepted = "男生";
         // Act
         String act = cs.getSexByID(id);
