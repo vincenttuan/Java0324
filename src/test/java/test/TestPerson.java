@@ -23,7 +23,7 @@ public class TestPerson {
     public void test2() {
         //Arrange
         Person p = new Person();
-        int age = 120;
+        int age = 150;
         int excepted = -1;
         //Act
         p.setAge(age);
