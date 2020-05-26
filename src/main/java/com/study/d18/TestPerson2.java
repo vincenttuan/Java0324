@@ -1,11 +1,11 @@
 package com.study.d18;
 
-public class TestPerson {
+public class TestPerson2 {
     public static void main(String[] args) {
         //Arrange
         Person p = new Person();
         int age = 18;
-        int excepted = 18;
+        int excepted = 19;
         //Act
         p.setAge(age);
         int act = p.getAge();
