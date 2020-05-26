@@ -9,7 +9,7 @@ public class TestCheckSex {
         // Act
         String act = cs.getSexByID(id);
         // Assert
-        assert (excepted.equals(act));
+        assert (excepted.equals(act)) : excepted + " == " + act;
         System.out.println("Pass");
     }
 }
