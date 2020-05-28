@@ -1,6 +1,12 @@
 package com.study.d19;
 
-public class Job1 {
+public class Job1 extends Thread {
+    
+    @Override
+    public void run() {
+        work();
+    }
+    
     public void work() {
         String threadName = Thread.currentThread().getName(); // 執行緒名字
         for(int i=1;i<=1000;i++) {
