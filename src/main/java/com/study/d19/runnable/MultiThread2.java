@@ -19,6 +19,7 @@ public class MultiThread2 {
         t1.start();
         Thread t2 = new Thread(r2);
         t2.start();
-        
+        // 總共有幾條執行緒 ?
+        System.out.printf("總共有 %d 條\n", Thread.activeCount());
     }
 }
