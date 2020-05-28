@@ -1,4 +1,4 @@
-package com.study.d19;
+package com.study.d19.thread;
 
 public class MultiThread2 {
     public static void main(String[] args) {
