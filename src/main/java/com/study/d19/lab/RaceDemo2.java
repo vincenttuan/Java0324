@@ -17,6 +17,7 @@ public class RaceDemo2 {
         };
         for(char a : animal.toCharArray()) {
             Thread t = new Thread(r, String.valueOf(a));
+            if(a == '牛') t.setPriority(10); else t.setPriority(1);
             t.start();
         }
         
