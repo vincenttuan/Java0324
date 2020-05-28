@@ -12,14 +12,12 @@ public class RaceDemo {
                     break;
                 }
             }
-        };
-        
+        };        
         Thread t1 = new Thread(r, "烏龜");
         Thread t2 = new Thread(r, "兔子");
+        t1.setPriority(Thread.MAX_PRIORITY); // t1.setPriority(10);
+        t2.setPriority(Thread.MIN_PRIORITY); // t2.setPriority(1);
         t1.start();
         t2.start();
-        
-        
-        
     }
 }
