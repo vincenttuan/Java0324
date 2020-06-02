@@ -56,19 +56,21 @@ class WeatherCallable implements Callable<Weather> {
         
         Weather weather = new Weather();
         weather.description = description;
-        weather.temp = temp;
-        weather.feelsLike = feelsLike;
+        weather.temp = temp - 273.15;
+        weather.feelsLike = feelsLike - 273.15;
         weather.humidity = humidity;
         return weather;
     }
 }
 
 public class OpenWeatherDemo {
-    public static void main(String[] args) {
-        WeatherCallable wc = new WeatherCallable("Taoyuan");
+    public static void main(String[] args) throws Exception {
+        WeatherCallable wc = new WeatherCallable("Taipei");
         FutureTask<Weather> task = new FutureTask<>(wc);
         Thread t = new Thread(task);
         t.start();
-        
+        Weather weather = task.get();
+        System.out.printf("天氣描述: %s\n氣溫: %.1f\n體感: %.1f\n濕度: %.1f\n",
+                weather.description, weather.temp, weather.feelsLike, weather.humidity);
     }
 }
