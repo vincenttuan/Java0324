@@ -1,5 +1,7 @@
 package com.study.d20;
 
+import java.net.URL;
+import java.util.Scanner;
 import java.util.concurrent.Callable;
 // 放置天氣的資料物件
 class Weather {
@@ -18,9 +20,11 @@ class WeatherCallable implements Callable<Weather> {
     }
     @Override
     public Weather call() throws Exception {
+        URL url = new URL(urlstring);
+        String json = new Scanner(url.openStream()).useDelimiter("\\A").next();
+        System.out.println(json);
         return null;
     }
-    
 }
 
 public class OpenWeatherDemo {
