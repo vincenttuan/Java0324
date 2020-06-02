@@ -1,5 +1,7 @@
 package com.study.d20;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import java.net.URL;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
@@ -24,7 +26,40 @@ class WeatherCallable implements Callable<Weather> {
         URL url = new URL(urlstring);
         String json = new Scanner(url.openStream()).useDelimiter("\\A").next();
         System.out.println(json);
-        return null;
+        // 1. 分析 json
+        JsonElement jsonElement = JsonParser.parseString(json);
+        String description = jsonElement
+                            .getAsJsonObject()
+                            .getAsJsonArray("weather")
+                            .get(0)
+                            .getAsJsonObject()
+                            .get("description")
+                            .getAsString();
+        
+        double temp = jsonElement
+                        .getAsJsonObject()
+                        .getAsJsonObject("main")
+                        .get("temp")
+                        .getAsDouble();
+        
+        double feelsLike = jsonElement
+                        .getAsJsonObject()
+                        .getAsJsonObject("main")
+                        .get("feels_like")
+                        .getAsDouble();
+        
+        double humidity = jsonElement
+                        .getAsJsonObject()
+                        .getAsJsonObject("main")
+                        .get("humidity")
+                        .getAsDouble();
+        
+        Weather weather = new Weather();
+        weather.description = description;
+        weather.temp = temp;
+        weather.feelsLike = feelsLike;
+        weather.humidity = humidity;
+        return weather;
     }
 }
 
