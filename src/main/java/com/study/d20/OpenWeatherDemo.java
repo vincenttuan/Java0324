@@ -3,6 +3,7 @@ package com.study.d20;
 import java.net.URL;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 // 放置天氣的資料物件
 class Weather {
     public double temp; // 溫度
@@ -28,5 +29,11 @@ class WeatherCallable implements Callable<Weather> {
 }
 
 public class OpenWeatherDemo {
-    
+    public static void main(String[] args) {
+        WeatherCallable wc = new WeatherCallable("Taoyuan");
+        FutureTask<Weather> task = new FutureTask<>(wc);
+        Thread t = new Thread(task);
+        t.start();
+        
+    }
 }
