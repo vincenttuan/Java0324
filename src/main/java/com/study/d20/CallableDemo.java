@@ -18,10 +18,14 @@ class FindLuckyNumber implements Callable<Integer> {
 
 public class CallableDemo {
     public static void main(String[] args) throws Exception {
+        // 1. 建立 Callable 物件
         FindLuckyNumber findLuckyNumber = new FindLuckyNumber();
+        // 2. 將 Callable 物件裝載到 FutureTask
         FutureTask<Integer> task = new FutureTask<>(findLuckyNumber);
+        // 3. 建立一個執行緒去執行
         Thread t = new Thread(task);
         t.start();
+        // 4. 透過 get 取得資料
         int num1 = task.get();
         
         FindLuckyNumber findLuckyNumber2 = new FindLuckyNumber();
