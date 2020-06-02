@@ -15,7 +15,7 @@ class GetLuckyNumber extends Thread {
     }
 }
 
-public class CallableDemo {
+public class RunnableDemo {
     public static void main(String[] args) {
         GetLuckyNumber num = new GetLuckyNumber();
         num.start();
