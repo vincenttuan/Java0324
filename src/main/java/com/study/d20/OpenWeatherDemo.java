@@ -10,7 +10,12 @@ class Weather {
 }
 // 取得天氣資料的執行緒工作
 class WeatherCallable implements Callable<Weather> {
-
+    private String city;
+    private String urlstring = "https://api.openweathermap.org/data/2.5/weather?q=%s,tw&appid=fcc57465b76d35357c84e4e30fe2431a";
+    public WeatherCallable(String city) {
+        this.city = city;
+        urlstring = String.format(urlstring, city);
+    }
     @Override
     public Weather call() throws Exception {
         return null;
