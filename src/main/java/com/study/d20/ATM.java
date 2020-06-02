@@ -52,5 +52,10 @@ class Withdraw implements Runnable { // 提款行為
 }
 
 public class ATM {
-    
+    public static void main(String[] args) {
+        Account account = new Account(10000); // 帳號有 $10000 元
+        Withdraw w1 = new Withdraw(account, 5000); // 欲提款 $5000 元的工作
+        Thread t1 = new Thread(w1, "小明"); // 指派小明做 w1 的工作
+        t1.start(); // 小明開始工作
+    }
 }
