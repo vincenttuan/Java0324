@@ -1,15 +1,18 @@
 package com.study.d21;
 
 import java.util.Date;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-class ShortTask implements Runnable {
+class ShortTask implements Callable<String> {
+
     @Override
-    public void run() {
-        System.out.println("短工作完成");
+    public String call() throws Exception {
+        return "短工作完成";
     }
+    
 }
 
 class LongTask implements Runnable {
@@ -29,14 +32,19 @@ public class ThreadPoolExecutorDemo2 {
     public static void main(String[] args) throws Exception {
         long begin = new Date().getTime();
         ExecutorService exec = Executors.newFixedThreadPool(2);
-        exec.submit(new ShortTask());
-        exec.submit(new ShortTask());
-        exec.submit(new ShortTask());
-        exec.submit(new LongTask());
-        exec.submit(new ShortTask());
-        exec.submit(new LongTask());
-        exec.submit(new ShortTask());
-        exec.submit(new LongTask());
+        
+        String s1 = exec.submit(new ShortTask()).get();
+        System.out.println(s1);
+        
+        String s2 = exec.submit(new ShortTask()).get();
+        System.out.println(s2);
+        
+        Object obj = exec.submit(new LongTask()).get(); // null
+        System.out.println("obj: " + obj);
+        
+        String s3 = exec.submit(new ShortTask()).get();
+        System.out.println(s3);
+        
         exec.shutdown();
         // 監控執行緒池的運作
         while(!exec.awaitTermination(1, TimeUnit.SECONDS)) {
