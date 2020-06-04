@@ -15,7 +15,7 @@ public class Car extends Thread {
         String carName = Thread.currentThread().getName();
         System.out.printf("%s 台北出發...\n", carName);
         try {
-            Thread.sleep(new Random().nextInt(5000));
+            Thread.sleep(new Random().nextInt(10_000));
             System.out.printf("%s 到台中了...\n", carName);
             cb.await(); // 等待其他車子
         } catch (Exception e) {
