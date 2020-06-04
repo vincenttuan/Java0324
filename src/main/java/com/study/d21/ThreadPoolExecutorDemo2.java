@@ -1,5 +1,6 @@
 package com.study.d21;
 
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -26,16 +27,23 @@ class LongTask implements Runnable {
 
 public class ThreadPoolExecutorDemo2 {
     public static void main(String[] args) throws Exception {
-        ExecutorService exec = Executors.newFixedThreadPool(4);
+        long begin = new Date().getTime();
+        ExecutorService exec = Executors.newFixedThreadPool(2);
+        exec.submit(new ShortTask());
         exec.submit(new ShortTask());
         exec.submit(new ShortTask());
         exec.submit(new LongTask());
         exec.submit(new ShortTask());
+        exec.submit(new LongTask());
+        exec.submit(new ShortTask());
+        exec.submit(new LongTask());
         exec.shutdown();
         // 監控執行緒池的運作
         while(!exec.awaitTermination(1, TimeUnit.SECONDS)) {
             System.out.println("仍有工作在執行...");
         }
         System.out.println("所有工作執行完畢");
+        long end = new Date().getTime();
+        System.out.printf("執行時間: %.2f\n", (end-begin)/1000.0);
     }
 }
