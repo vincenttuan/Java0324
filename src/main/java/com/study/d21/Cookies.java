@@ -4,7 +4,7 @@ public class Cookies {
     private boolean empty = true; // 預設盤子是空的
     
     public synchronized void put(int no) { // 放餅乾
-        if(!empty) {
+        while(!empty) {
             try {
                 wait();
             } catch (Exception e) {
@@ -12,11 +12,11 @@ public class Cookies {
         }
         System.out.printf("主人放了第 %d 塊餅乾\n", no);
         empty = false; // 盤子上已有餅乾
-        notify(); // 喚醒正在 wait 的執行緒
+        notifyAll(); // 喚醒正在 wait 的執行緒
     }
     
     public synchronized void eat(int no) { // 吃餅乾
-        if(empty) {
+        while(empty) {
             try {
                 wait(); // 等待...
             } catch (Exception e) {
@@ -24,6 +24,6 @@ public class Cookies {
         }
         System.out.printf("小狗吃了第 %d 塊餅乾\n", no);
         empty = true; // 盤子已空
-        notify(); // 喚醒正在 wait 的執行緒
+        notifyAll(); // 喚醒正在 wait 的執行緒
     }
 }
