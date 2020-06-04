@@ -15,7 +15,9 @@ class LuckyNumber implements Runnable {
 public class ThreadPoolExecutorDemo {
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        for(int i=1;i<=10;i++) {
+        //ExecutorService exec = Executors.newSingleThreadExecutor();
+        //ExecutorService exec = Executors.newFixedThreadPool(5);
+        for(int i=1;i<=100;i++) {
             exec.submit(new LuckyNumber());
         }
         System.out.println("執行緒數量: " + Thread.activeCount());
