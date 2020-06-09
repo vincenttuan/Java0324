@@ -17,7 +17,8 @@ public class GetPrice2 implements Runnable {
         try {
             Stock stock = YahooFinance.get(symbol);
             double price = stock.getQuote().getPrice().doubleValue();
-            System.out.printf("symbol: %s price:%.2f\n", symbol, price);
+            String name = stock.getName();
+            System.out.printf("symbol: %s(%s) price:%.2f\n", symbol, name, price);
         } catch (Exception e) {
             
         }
