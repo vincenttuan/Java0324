@@ -1,4 +1,4 @@
-package com.study.d22.single_scheduled;
+package com.study.d22.scheduled;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
