@@ -1,6 +1,8 @@
 package com.study.d22.single_scheduled;
 
 import java.util.concurrent.Callable;
+import yahoofinance.Stock;
+import yahoofinance.YahooFinance;
 
 // 取得金融商品報價
 public class GetPrice implements Callable<Double>{
@@ -12,7 +14,9 @@ public class GetPrice implements Callable<Double>{
     
     @Override
     public Double call() throws Exception {
-        return 0.0;
+        Stock stock = YahooFinance.get(symbol);
+        double price = stock.getQuote().getPrice().doubleValue();
+        return price;
     }
     
 }
