@@ -7,9 +7,11 @@ public class FileReaderDemo {
     public static void main(String[] args) {
         File file = new File("src/main/java/com/study/d23_io/MyFile.txt");
         try(FileReader fr = new FileReader(file);) {
-            System.out.print((char)fr.read());
+            int data;
+            while ((data = fr.read()) != -1) {
+                System.out.print((char)data);
+            }
         } catch (Exception e) {
         }
-        
     }
 }
