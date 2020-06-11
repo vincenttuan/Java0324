@@ -8,21 +8,16 @@ class MyInt extends Thread {
     public void run() {
         while (true) {            
             System.out.println("寫入:" + i.incrementAndGet());
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-            }
         }
     }
 }
 
 public class AtomicDemo {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         MyInt myInt = new MyInt();
         myInt.start();
         while (true) {            
             System.out.println("讀取:" + myInt.i.get());
-            Thread.sleep(1000);
         }
     }
 }
