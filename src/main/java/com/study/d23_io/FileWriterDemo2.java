@@ -7,8 +7,9 @@ public class FileWriterDemo2 {
     public static void main(String[] args) {
         File file = new File("src/main/java/com/study/d23_io/MyFile.txt");
         try(FileWriter fw = new FileWriter(file, true); ) {
-            fw.write("ABC");
+            fw.write("蔡英文");
         } catch (Exception e) {
         }
+        System.out.println("資料寫入完成");
     }
 }
