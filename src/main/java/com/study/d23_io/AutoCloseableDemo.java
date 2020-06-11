@@ -28,8 +28,12 @@ class Bar implements AutoCloseable {
 
 public class AutoCloseableDemo {
     public static void main(String[] args) {
-        try(Bar bar = new Bar()) {
+        try(Bar bar = new Bar();
+            Foo foo = new Foo();) {
+            
             bar.play();
+            foo.play();
+            
         } catch (Exception e) {
         }
     }
