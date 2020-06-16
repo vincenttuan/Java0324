@@ -19,7 +19,7 @@ public class MyServer {
             
             int data;
             while ((data = isr.read()) != -1) {                
-                System.out.print(data);
+                System.out.print((char)data);
             }
             System.out.println();
             
