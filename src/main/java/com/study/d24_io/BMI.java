@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class BMI implements Serializable {
     private double h;
-    private double w;
+    private transient double w;
     private double bmi;
 
     public BMI() {
