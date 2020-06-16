@@ -8,18 +8,22 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class MyServer {
+
     public static void main(String[] args) throws Exception {
         int port = 5000;
         ServerSocket server = new ServerSocket(port);
         System.out.println("等待 Client 連入");
         Socket socket = server.accept();
         System.out.println("Client 連入, port=" + socket.getPort());
-        
-        try(InputStream is = socket.getInputStream();
-            InputStreamReader bis = new InputStreamReader(is);
-            BufferedReader br = new BufferedReader(bis);) {
+
+        try (InputStream is = socket.getInputStream();
+                InputStreamReader bis = new InputStreamReader(is);
+                BufferedReader br = new BufferedReader(bis);) {
+
             System.out.println(br.readLine());
+
         } catch (Exception e) {
         }
+
     }
 }
