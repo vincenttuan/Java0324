@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class MyClient {
 
     public static void main(String[] args) throws Exception {
+        // 清除主控台資料
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         int port = 5000;
         Socket socket = new Socket("127.0.0.1", port);
         System.out.println("連線成功~");
