@@ -1,6 +1,7 @@
 package com.study.d24_io;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
@@ -15,13 +16,10 @@ public class MyServer {
         System.out.println("Client 連入, port=" + socket.getPort());
         
         try(InputStream is = socket.getInputStream();
-            InputStreamReader isr = new InputStreamReader(is);) {
+            InputStreamReader bis = new InputStreamReader(is);
+            BufferedReader br = new BufferedReader(bis);) {
             
-            int data;
-            while ((data = isr.read()) != -1) {                
-                System.out.print((char)data);
-            }
-            System.out.println();
+            System.out.println(br.readLine());
             
         } catch (Exception e) {
         }
