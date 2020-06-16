@@ -32,7 +32,7 @@ public class Copy {
         System.out.println(list);
         // 逐行寫入
         try(FileWriter fw = new FileWriter(dest);
-            BufferedWriter bw = new BufferedWriter(fw);) {
+            BufferedWriter bw = new BufferedWriter(fw, 8*1024);) {
             
             while (!list.isEmpty()) {                
                 String line = list.poll(); // 資料取出並移除
