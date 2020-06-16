@@ -18,9 +18,7 @@ public class MyServer {
         try(InputStream is = socket.getInputStream();
             InputStreamReader bis = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(bis);) {
-            
             System.out.println(br.readLine());
-            
         } catch (Exception e) {
         }
     }
