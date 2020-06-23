@@ -97,3 +97,11 @@ SELECT * FROM APP.JUNIOREXAM --FETCH FIRST 100 ROWS ONLY;
 WHERE score <= 22.3
 ORDER BY score DESC -- DESC:按照分數由大到小排列, ASC:按照分數由小到大排列
 FETCH FIRST 10 ROWS ONLY
+
+-- 分析男生
+SELECT school, quote, score FROM APP.JUNIOREXAM
+WHERE school not like ('%女%')
+
+-- 分析女生
+SELECT school, quote, score FROM APP.JUNIOREXAM
+WHERE school not like ('%男%')
