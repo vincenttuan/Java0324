@@ -15,10 +15,6 @@ public class Read_Boy {
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery();) {
             
-            ResultSetMetaData md = rs.getMetaData();
-            System.out.printf("%10s%10s%10s\n", md.getColumnName(1), md.getColumnName(2), md.getColumnName(3));
-            System.out.println("------------------------------");
-            
             int my_sort = 2500;
             String my_school = null;
             int quote_sum = 0;
