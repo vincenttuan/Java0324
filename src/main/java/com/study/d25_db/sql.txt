@@ -92,3 +92,10 @@ INSERT INTO JuniorExam VALUES('基隆八斗',66 , 11.6);
 INSERT INTO JuniorExam VALUES('基隆海事',296 , 11.6);
 INSERT INTO JuniorExam VALUES('基隆高中',371 , 11.6);
 
+-- 22.3 分的學校落點分析
+SELECT * FROM APP.JUNIOREXAM --FETCH FIRST 100 ROWS ONLY;
+WHERE score <= 22.3
+ORDER BY score DESC -- DESC:按照分數由大到小排列, ASC:按照分數由小到大排列
+FETCH FIRST 10 ROWS ONLY
+
+-- 
