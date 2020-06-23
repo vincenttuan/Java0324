@@ -31,7 +31,7 @@ public class Read_Boy {
                     break;
                 }
             }
-            System.out.printf("排名: %d 落點學校: %s\n", my_sort, my_school);
+            System.out.printf("男生排名: %d 落點學校: %s\n", my_sort, my_school);
             
         } catch (Exception e) {
         }
