@@ -104,4 +104,4 @@ WHERE school not like ('%女%')
 
 -- 分析女生
 SELECT school, quote, score FROM APP.JUNIOREXAM
-WHERE school not like ('%男%')
+WHERE school not like ('%男%') and school not in ('建中', '成功')
