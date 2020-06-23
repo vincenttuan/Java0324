@@ -8,11 +8,9 @@ CREATE TABLE Student (
 
 -- 國中會考成績
 Create Table JuniorExam (
-    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
     school VARCHAR(10) NOT NULL,
     quote INT NOT NULL,
-    score FLOAT NOT NULL,
-    PRIMARY KEY (id)
+    score FLOAT NOT NULL
 )
 
 -- 國中會考成績資料列
