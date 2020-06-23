@@ -43,7 +43,12 @@
             <artifactId>derbyclient</artifactId>
             <version>10.14.2.0</version>
         </dependency>
-
+        
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>0.12</version>
+        </dependency>
         
     </dependencies>
     
