@@ -10,9 +10,9 @@ import java.nio.file.StandardCopyOption;
 
 public class FilesStreamCopy {
     public static void main(String[] args) {
-        String url = "http://www.oracle.com/technetwork/java/javadev-15-165770.jpg";
+        String url = "http://www.flyo.com.tw/flyoshop/image/logo200.gif";
         URI uri = URI.create(url);
-        Path dest = Paths.get("src/main/java/com/study/d26_nio/javadev.jpg");
+        Path dest = Paths.get("src/main/java/com/study/d26_nio/logo.gif");
         try(InputStream in = uri.toURL().openStream()) {
             Files.copy(in, dest, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
