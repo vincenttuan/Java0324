@@ -20,6 +20,8 @@ public class RS_Update {
                 rs.updateInt("age", 888);
                 rs.updateRow();
                 System.out.println("修改完成");
+            } else {
+                System.out.println("無此資料");
             }
             
             
